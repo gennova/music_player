@@ -9,10 +9,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection 
 
-if ($conn->connect_error) {
+/* if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); 
 
 }
+*/
     // variable pendefinisian kredensial
     $usernamelogin = 'admin';
     $passwordlogin = 'admin';
@@ -29,6 +30,7 @@ if ($conn->connect_error) {
         session_start();
         $_SESSION['username'] = $username;
         $ip_address = $_SERVER['REMOTE_ADDR'];
+	/* disable database
         // Insert login history to database
             $sql = "INSERT INTO login_history (username, login_time,ip_address) VALUES ('$username', NOW(),'$ip_address')";
             if ($conn->query($sql) === TRUE) {
@@ -36,6 +38,7 @@ if ($conn->connect_error) {
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
+	*/
         header("Location: app.php");
     } 
     else {
