@@ -5,7 +5,7 @@ $password = ">5itXwJt";
 $dbname = "u545061311_music";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+//$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection 
 
