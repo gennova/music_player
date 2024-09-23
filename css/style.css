@@ -8,13 +8,21 @@ a,a:hover,a:visited{color:#ddd;text-decoration:none;}
 .flex-align{-webkit-align-items:center;align-items:center;}
 .w-full{width:100%;}
 
-/* HTML5 Audio Player with Playlist, source: https://codepen.io/sekedus/pen/ExxjZEz */
+/* HTML5 Audio Player with Playlist*/
 #simp button,#simp input,#simp img{border:0;}
 #simp{max-width:600px;font-size:14px;font-family:"Segoe UI", Tahoma, sans-serif;text-align:initial;line-height:initial;background:#17212b;color:#ddd;margin:0 auto;border-radius:6px;overflow:hidden;}
 #simp .simp-album{padding:20px 25px 5px;}
 #simp .simp-album .simp-cover{margin-right:20px;}
 #simp .simp-album .simp-cover img{max-width:80px;width:100%;margin:0;padding:0;display:block;}
-#simp .simp-album .simp-title{font-size:120%;font-weight:bold;}
+#simp .simp-album .simp-title{font-size:120%;font-weight:bold;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+            height: 50px;
+            overflow: hidden;
+            position: relative;
+            transform: translateX(50%);
+            animation: bouncing-text 10s ease-in-out infinite alternate;
+}
+
 #simp .simp-album .simp-artist{font-size:90%;color:#6c7883;}
 #simp .simp-controls{padding:15px;}
 #simp .simp-controls button{font-size:130%;width:32px;height:32px;background:none;color:#ddd;padding:7px;cursor:pointer;border:0;border-radius:3px;}
@@ -68,3 +76,12 @@ a,a:hover,a:visited{color:#ddd;text-decoration:none;}
 
 
 }
+@keyframes bouncing-text {
+            0% {
+                transform: translateX(95%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
