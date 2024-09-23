@@ -14,8 +14,8 @@ if ($conn->connect_error) {
 
 }
     // variable pendefinisian kredensial
-    $usernamelogin = 'onebiliondollar';
-    $passwordlogin = 'UmpuKakah2024!@#$';
+    $usernamelogin = 'admin';
+    $passwordlogin = 'admin';
 
     // memulai session
     session_start();
