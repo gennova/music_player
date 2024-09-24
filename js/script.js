@@ -337,3 +337,30 @@ function changeColor() {
 }
 
 setInterval(changeColor, 2000); // Change color every 2 seconds
+
+function searchAfterTyping() {
+  var searchQuery = document.getElementById("search-input").value;
+
+ 
+  if (searchQuery.trim() !== "") {
+      
+      fetch('app.php?query=' + searchQuery, {
+          method: 'GET'
+      })
+      .then(response => response.text())
+      .then(data => {
+          
+          document.getElementById("search-results").innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+  } else {
+      
+      document.getElementById("search-results").innerHTML = "";
+  }
+}
+
+
+window.onload = function() {
+  var searchInput = document.getElementById("search-input");
+  addEventListener_multi(searchInput, 'keyup', searchAfterTyping);
+};

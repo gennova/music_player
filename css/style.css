@@ -41,6 +41,8 @@ a,a:hover,a:visited{color:#ddd;text-decoration:none;}
 #simp .simp-footer{padding:10px 10px 12px;font-size:90%;text-align:center;opacity:.7;}
 #simp .simp-display{overflow:hidden;max-height:650px;transition:max-height .5s ease-in-out;}
 #simp .simp-hide{max-height:0;}
+/* search */
+#simp input[type=text]{margin:5px 18px 0;width: 85%;padding:8px 20px;list-style:none;background:#fff;}
 /* playlist */
 #simp ul{margin:5px 0 0;padding:0;list-style:none;max-height:245px;}
 #simp ul li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;margin:0;padding:8px 20px;cursor:pointer;}
