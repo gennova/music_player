@@ -78,7 +78,7 @@ echo '
     <div id="search-results"></div>
     <ul>
     
-    
+       
       ' ?>
       <?php
       if (isset($_GET['query'])) {

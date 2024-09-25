@@ -63,6 +63,8 @@ a.btn:hover{
     text-align: center;
     color: #333;
     margin-top: 1px;
+    position: absolute;
+    bottom:0;
 
 }
 .credit span:before{
@@ -85,10 +87,12 @@ a.btn:hover{
     font-size: 9pt;
     position: absolute;
     margin: 3px;
+    
+
 }
 main{
   background: #fff;
-  padding:: 20px;
+  padding: 20px;
   
 }
 

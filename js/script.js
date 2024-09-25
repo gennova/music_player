@@ -330,33 +330,33 @@ if (document.querySelector('#simp')) {
 }
 
 
-function changeColor() {
-    var colors = ["#007bff", "#6610f2", "#dc3545", "#fd7e14", "#ffc107", "#28a745"]; // Aurora-inspired colors
-    var randomIndex = Math.floor(Math.random() * colors.length);
-    document.body.style.backgroundColor = colors[randomIndex];
-}
-
-setInterval(changeColor, 2000); // Change color every 2 seconds
+ // Change color every 2 seconds
 
 function searchAfterTyping() {
   var searchQuery = document.getElementById("search-input").value;
-
+  console.log(searchQuery);
  
   if (searchQuery.trim() !== "") {
-      
-      fetch('app.php?query=' + searchQuery, {
-          method: 'GET'
-      })
+    try {
+      // var xhr = new XMLHttpRequest();
+      // xhr.open("GET", "./search?query=" + encodeURIComponent(searchQuery), true);
+      // xhr.send();
+      fetch('/search?query=' + encodeURIComponent(searchQuery))
       .then(response => response.text())
       .then(data => {
-          
-          document.getElementById("search-results").innerHTML = data;
-      })
+        document.getElementById('search-results').innerHTML = data; // Update the response div
+        var s = document.createElement('script');
+        s.src = 'js/script.js';
+        document.body.appendChild(s);
+        // document.querySelector('#simp');
+        })
       .catch(error => console.error('Error:', error));
-  } else {
-      
-      document.getElementById("search-results").innerHTML = "";
-  }
+
+       
+    } catch (error) {
+        console.error(error);
+    }
+}
 }
 
 
