@@ -67,7 +67,8 @@ echo '
  <main>
      <div class="simple-audio-player" id="simp" data-config={"shide_top":false,"shide_btm":false,"auto_load":false}>
   <div class="simp-playlist">
-    <ul>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+    <ul id="myUL">
       '?>
       <?php
         function readDirectoryRecursively($dirPath) {
@@ -83,7 +84,7 @@ echo '
                     // Check if the file has a .mp3 extension
                     if (pathinfo($filePath, PATHINFO_EXTENSION) === 'mp3' || pathinfo($filePath, PATHINFO_EXTENSION) === 'wav') {
                         // Process MP3 files
-                        echo '<li><span class="simp-source" data-src="'.$filePath.'">'.rtrim($file,".mp3").'</span></li>';
+                        echo '<li><a href="#"><span class="simp-source" data-src="'.$filePath.'">'.rtrim($file,".mp3").'</span></a></li>';
                     }
                 }
             }
